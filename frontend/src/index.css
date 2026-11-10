@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "DM Sans", "Hind Siliguri", sans-serif;
+  color: #26332b;
+  background: #f6f8f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+::selection {
+  color: #fff;
+  background: #639343;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+.sidebar {
+  width: 250px;
+  flex: 0 0 250px;
+}
+.main-area {
+  min-width: 0;
+}
+.soft-card {
+  border: 1px solid #ebeee6;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(36, 56, 34, 0.045);
+}
+.section-label {
+  color: #879187;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.nav-item {
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+.nav-item:hover {
+  transform: translateX(2px);
+}
+.weather-art {
+  background:
+    radial-gradient(
+      circle at 80% 22%,
+      rgba(255, 255, 255, 0.74) 0 10%,
+      transparent 11%
+    ),
+    linear-gradient(135deg, #e8f1df, #f3f6e8 55%, #e4eddb);
+}
+.upload-zone {
+  border: 1.5px dashed #cdd9c4;
+  background: #f9fbf7;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+.upload-zone:hover {
+  border-color: #639343;
+  background: #f4f8ef;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.modal-backdrop {
+  background: rgba(24, 37, 28, 0.43);
+  backdrop-filter: blur(4px);
+}
+@media (max-width: 1023px) {
+  .sidebar {
+    width: 76px;
+    flex-basis: 76px;
+  }
+  .sidebar-label,
+  .sidebar-brand-text,
+  .sidebar-footer-copy {
+    display: none;
+  }
+  .sidebar .nav-item {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+  .sidebar.mobile-open {
+    position: fixed;
+    z-index: 40;
+    inset: 0 auto 0 0;
+    display: flex;
+    width: 260px;
+    padding-top: 16px;
+  }
+  .sidebar.mobile-open .sidebar-label,
+  .sidebar.mobile-open .sidebar-brand-text,
+  .sidebar.mobile-open .sidebar-footer-copy {
+    display: block;
+  }
+  .sidebar.mobile-open .nav-item {
+    justify-content: flex-start;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
